@@ -20,14 +20,14 @@ function App() {
 
 export default App;
 
-{/* //     <Router>
-        //         <div className="flex-column justify-center align-center min-100-vh bg-primary">
-        //             <Routes>
-        //                 <Route 
-        //                     path="/"
-        //                     element=" "
-        //                 />
-        //             </Routes>
-        //         </div>
-        //     </Router> */}
+// {/* //     <Router>
+//         //         <div className="flex-column justify-center align-center min-100-vh bg-primary">
+//         //             <Routes>
+//         //                 <Route 
+//         //                     path="/"
+//         //                     element=" "
+//         //                 />
+//         //             </Routes>
+//         //         </div>
+//         //     </Router> */}
         
