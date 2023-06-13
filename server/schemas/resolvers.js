@@ -5,9 +5,15 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query:{
         // get signle user
-        user: async(parent,{userId}) => {
-            return User.findOne({_id:userId});
-        },
+        me: async (parent, args, context) => {
+          if (context.user){
+              const data = await User.findOne({
+                  _id: context.user._id
+              }).select('-__v -password')
+              return data;
+          }throw new AuthenticationError("You're not logged in!")
+      }
+
     },
 
     Mutation:{
