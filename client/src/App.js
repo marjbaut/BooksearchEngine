@@ -1,11 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Router,  Route, Routes } from 'react-router-dom';
+// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ApolloClient, ApolloProvider, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 import Navbar from './components/Navbar';
 import SearchBooks from './pages/SearchBooks'
 import SavedBooks from './pages/SavedBooks';
+
 
 // // const client = new ApolloClient({
 // //     uri: '/graphql',
@@ -47,13 +49,11 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <>
           <Navbar />
-          <Switch>
-            <Route exact path="/" component={SearchBooks} />
-            <Route exact path="/saved" component={SavedBooks} />
-          </Switch>
-        </>
+          <Routes >
+            <Route  path="/" element={ <SearchBooks />} />
+            <Route  path="/saved" element={<SavedBooks/>} />
+          </Routes>
       </Router>
     </ApolloProvider>
     );
