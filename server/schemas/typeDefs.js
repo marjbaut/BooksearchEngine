@@ -14,10 +14,34 @@ type Auth {
   token: ID!
   user: User
 }
-type Mutation{
-  createUser(username:String!, email:String!, password:String!):User
-  login(email:String!, password:String!): Auth
+
+type Book {
+  bookId: ID!
+  authors: [String]
+  description: String
+  title: String
+  image: String
+  link: String
+}
+
+input InputBook {
+  bookId: String
+  authors: [String]
+  title: String
+  description: String
+  image: String
+  link: String
+}
+
+type Query {
+  me: User
+}
+
+type Mutation {
+  login(email: String!, password: String!): Auth
+  addUser(username: String!, email: String!, password: String!): Auth
+  saveBook(newBook: InputBook!): User
+  removeBook(bookId: ID!): User
 }
 `;
-// addBook(title:String!, description: String!):Book
 module.exports = typeDefs;
