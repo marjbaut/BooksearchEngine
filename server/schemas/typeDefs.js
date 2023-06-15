@@ -7,8 +7,7 @@ type User {
     email: String!
     bookCount: Int
     savedBooks: [Book]
-
-  }
+}
 
 type Auth {
   token: ID!
